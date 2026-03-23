@@ -29,7 +29,7 @@ Host localhost
   StrictHostKeyChecking false
   UserKnownHostsFile /dev/null
 
-Match user ubnt host 192.168.*
+Match user ubnt host 10.11.*
   StrictHostKeyChecking false
   UserKnownHostsFile /dev/null
 

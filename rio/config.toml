@@ -3,32 +3,31 @@ confirm-before-quit = false
 theme = "catppuccin"
 
 [editor]
-program = "nvim"
 args = []
+program = "nvim"
 
 [fonts]
-size = 13
+extras = [{family = "JetBrainsMono Nerd Font Mono"}]
 family = "TX-02"
-features = ["zero","calt","liga"]
-extras = [{family="JetBrainsMono Nerd Font Mono"}]
+features = ["zero", "calt", "liga"]
+size = 16
 symbol-map = [
   # powerline & powerline-extras
-  {start = "e0b0", end ="e0b3", font-family="JetBrainsMono Nerd Font Mono"},
-  {start = "e0b4", end ="e0c8", font-family="JetBrainsMono Nerd Font Mono"},
-  {start = "e0cc", end ="e0d4", font-family="JetBrainsMono Nerd Font Mono"},
-  {start = "e0ca", end ="e0ca", font-family="JetBrainsMono Nerd Font Mono"},
-  # font-awesome
-  {start = "f000", end ="f2e0", font-family="JetBrainsMono Nerd Font Mono"},
-  {start = "f200", end ="e2a9", font-family="JetBrainsMono Nerd Font Mono"},
-  # seti-ui
-  {start = "e5fa", end ="e6b1", font-family="JetBrainsMono Nerd Font Mono"},
-  # codicons
-  {start = "ea60", end ="ebeb", font-family="JetBrainsMono Nerd Font Mono"},
+  {start = "e0b0", end = "e0b3", font-family = "JetBrainsMono Nerd Font Mono"},
+  {start = "e0b4", end = "e0c8", font-family = "JetBrainsMono Nerd Font Mono"},
+  {start = "e0cc", end = "e0d4", font-family = "JetBrainsMono Nerd Font Mono"},
+  {start = "e0ca", end = "e0ca", font-family = "JetBrainsMono Nerd Font Mono"}, # font-awesome
+  {start = "f000", end = "f2e0", font-family = "JetBrainsMono Nerd Font Mono"},
+  {start = "f200", end = "e2a9", font-family = "JetBrainsMono Nerd Font Mono"}, # seti-ui
+  {start = "e5fa", end = "e6b1", font-family = "JetBrainsMono Nerd Font Mono"}, # codicons
+  {start = "ea60", end = "ebeb", font-family = "JetBrainsMono Nerd Font Mono"},
 ]
 
 [window]
-mode = "Maximized"
-decorations = "Enabled"
-macos-use-shadow = true
 colorspace = "rec2020"
+decorations = "Enabled"
+height = 800
+macos-use-shadow = true
 macos-use-unified-titlebar = true
+mode = "Windowed"
+width = 1200

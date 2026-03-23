@@ -39,8 +39,6 @@ brew "imagemagick"
 brew "ipcalc"
 brew "jj"
 brew "jq"
-brew "kubectx"
-brew "kubernetes-cli"
 brew "lsd"
 brew "lua-language-server"
 brew "makensis"
@@ -100,13 +98,12 @@ cask "caffeine"
 cask "cleanshot"
 cask "copilot-cli"
 cask "deckset"
-cask "discord"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
-cask "gcloud-cli"
 cask "ghostty"
 cask "google-chrome"
 cask "goreleaser/tap/goreleaser-pro"
+cask "jdownloader"
 cask "hammerspoon"
 cask "imageoptim"
 cask "ledger-wallet"
@@ -115,28 +112,8 @@ cask "monodraw"
 cask "orbstack"
 cask "caarlos0/tap/pinata"
 cask "rio"
-cask "signal"
-cask "slack"
 cask "soulver"
 cask "caarlos0/tap/svu"
-cask "telegram"
 cask "tomatobar"
 cask "vlc"
-cask "whatsapp"
-cask "zoom"
-mas "1Password for Safari", id: 1569813296
-mas "Consent-O-Matic", id: 1606897889
-mas "Control Panel for Twitter", id: 1668516167
-mas "Control Panel for YouTube", id: 6478456678
-mas "Debit & Credit", id: 882637653
-mas "HEIC Converter", id: 1294126402
-mas "Keynote", id: 409183694
-mas "Lungo", id: 1263070803
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Parcel", id: 375589283
-mas "Reeder", id: 1529448980
-mas "StopTheMadness", id: 1376402589
-mas "Tailscale", id: 1475387142
-mas "Vimari", id: 1480933944
-mas "Xcode", id: 497799835
+

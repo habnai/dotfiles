@@ -111,6 +111,6 @@
 	sort = "version:refname"
 
 [user]
-	email = "caarlos0@users.noreply.github.com"
-	name = "Carlos Alexandro Becker"
+	email = "habnai0@users.noreply.github.com"
+	name = "habnai"
 	signingKey = "~/.ssh/id_ed25519"
