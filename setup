@@ -1,0 +1,64 @@
+#!/bin/bash
+set -euo pipefail
+
+link() {
+  mkdir -p "$(dirname "$2")"
+  if [ -e "$2" ]; then
+    echo "Skipping $2, already exists."
+  else
+    ln -sf "$1" "$2"
+    echo "Linked $1 to $2"
+  fi
+}
+
+# bins
+link "$PWD"/bin ~/.bin
+
+# shell
+link "$PWD"/fish/functions ~/.config/fish/functions
+link "$PWD"/fish/themes ~/.config/fish/themes
+link "$PWD"/fish/config.fish ~/.config/fish/config.fish
+fish -c "fish_config theme choose catppuccin-mocha" ||
+  echo "catppuccin-mocha theme not found, skipping"
+
+# terms
+link "$PWD"/ghostty ~/.config/ghostty
+link "$PWD"/rio ~/.config/rio
+
+# ssh
+link "$PWD"/ssh/* ~/.ssh/
+
+# neovim
+if which nvim; then
+  link "$PWD"/nvim ~/.config/nvim
+  nvim --headless "+Lazy! sync" +qa &>/dev/null
+fi
+
+# crush
+link "$PWD"/crush ~/.config/crush
+git clone https://github.com/anthropics/skills ~/Developer/forks/anthropic-skills
+
+# other apps
+link "$PWD"/.editorconfig ~/.editorconfig
+link "$PWD"/hammerspoon/init.lua ~/.hammerspoon/init.lua
+link "$PWD"/btop/btop.conf ~/.config/btop/btop.conf
+link "$PWD"/git/config ~/.config/git/config
+link "$PWD"/git/gitignore ~/.config/git/ignore
+link "$PWD"/gh/config.yml ~/.config/gh/config.yml
+link "$PWD"/gh-dash/config.yml ~/.config/gh-dash/config.yml
+link "$PWD"/fd/ignore ~/.config/fd/ignore
+link "$PWD"/direnv ~/.config/direnv
+
+if [[ $OSTYPE == 'darwin'* ]]; then
+  brew bundle
+fi
+
+# Fish setup
+if ! grep -q fish /etc/shells; then
+  echo "Adding $(which fish) to /etc/shells - will ask sudo password"
+  which fish | sudo tee -a /etc/shells
+fi
+if ! finger "$USER" | grep -q 'Shell: .*fish'; then
+  echo "Setting $(which fish) as the default shell - will ask user password"
+  chsh -s "$(which fish)"
+fi

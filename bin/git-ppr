@@ -1,0 +1,14 @@
+#!/bin/sh
+# git push and open github pr creation page
+set -e
+
+if gh repo set-default --view 2>&1 | grep -qw set-default; then
+  # tries to set upstream, if fails, sets origin.
+  gh repo set-default upstream 2>/dev/null ||
+    gh repo set-default origin 2>/dev/null
+fi
+
+# force-pass `--repo` because it doesn't work inside worktrees otherwise.
+# see: https://github.com/cli/cli/issues/1837
+git push origin HEAD &&
+  gh pr create -w --assignee="@me" --repo "$(gh repo set-default --view)"

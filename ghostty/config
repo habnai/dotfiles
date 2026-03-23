@@ -1,0 +1,63 @@
+# vi:ft=conf
+#
+# https://ghostty.org/docs/config/reference
+#
+
+auto-update = off
+# auto-update-channel = tip
+window-decoration = true
+window-theme = "dark"
+macos-titlebar-style = tabs
+macos-window-buttons = hidden
+window-save-state = never
+window-padding-balance = true
+maximize = true
+confirm-close-surface = true
+macos-option-as-alt = true
+shell-integration = fish
+shell-integration-features = no-cursor,title
+copy-on-select = clipboard
+cursor-style = block
+cursor-style-blink = true
+mouse-hide-while-typing = true
+clipboard-read = "allow"
+clipboard-paste-protection = false
+window-inherit-working-directory=true
+unfocused-split-opacity = 0.75
+split-divider-color = #313244
+unfocused-split-fill = #000000
+
+font-family = "TX-02"
+font-size = 14
+font-feature = zero
+font-feature = calt
+font-feature = liga
+
+# https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points
+# powerline & powerline-extras
+font-codepoint-map = U+e0b0-U+e0b3,U+e0b4-U+e0c8,U+e0cc-U+e0d4,U+e0ca=JetBrainsMono Nerd Font Mono
+
+# font-awesome
+font-codepoint-map = U+f000-U+f2e0,U+e200-U+e2a9=JetBrainsMono Nerd Font Mono
+
+# seti-ui
+font-codepoint-map = U+e5fa-U+e6b1=JetBrainsMono Nerd Font Mono
+
+# codicons
+font-codepoint-map = U+ea60-U+ebeb=JetBrainsMono Nerd Font Mono
+
+theme = "Catppuccin Mocha"
+background = #000000
+
+# navigate between splits (vim-style)
+# super+h requires remapping "Hide Ghostty" in macOS keyboard settings
+keybind = super+h=goto_split:left
+keybind = super+j=goto_split:bottom
+keybind = super+k=goto_split:top
+keybind = super+l=goto_split:right
+
+# resize splits
+keybind = super+right=resize_split:right,50
+keybind = super+down=resize_split:down,50
+keybind = super+left=resize_split:left,50
+keybind = super+up=resize_split:up,50

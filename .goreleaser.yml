@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://goreleaser.com/static/schema-pro.json
+version: 2
+project_name: dotfiles
+builds:
+  - skip: true
+dockers_v2:
+  - images:
+      - caarlos0/debug
+    tags:
+      - latest
+      - "{{.Tag}}"
+    extra_files:
+      - setup
+      - bin
+      - crush
+      - direnv
+      - fd
+      - fish
+      - gh
+      - gh-dash
+      - ghostty
+      - git
+      - hammerspoon
+      - lua
+      - nvim
+      - rio
+      - ssh
+changelog:
+  sort: asc
+  use: github
+  divider: "---"
+  filters:
+    exclude:
+      - "^chore.*"
+  groups:
+    - title: "Coding"
+      regexp: "^.*\\((git|vim|nvim|neovim)\\):+.*$"
+      order: 240
+    - title: "Terminals"
+      regexp: "^.*\\((kitty|wezterm|rio|ghostty|alacritty)\\):+.*$"
+      order: 250
+    - title: "System"
+      regexp: "^.*\\((system|fish|fzf|ssh|core|pkg|pkgs|brew|homebrew|darwin|macos|linux)\\):+.*$"
+      order: 100
+    - title: "AI"
+      regexp: "^.*\\(ai|crush\\):+.*$"
+      order: 500
+    - title: Others
+      order: 999
